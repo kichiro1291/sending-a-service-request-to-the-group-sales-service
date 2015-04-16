@@ -1,0 +1,425 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8" />
+	<title>ПЕРЕДАЧА ОБРАЩЕНИЙ В СЕРВИСНУЮ ГРУППУ</title>
+	<link rel="stylesheet" href="style.css" />
+	<script type="text/javascript" src="jquery-2.1.3.min.js"></script>
+	<script type="text/javascript">
+/* Функция показа основных шагов процедуры */
+$(document).ready(function(){
+	$('input.content_menu').change(function(){
+		var class_name = $(this).attr('class');
+		class_name = class_name.substring(class_name.indexOf('c_m_'), class_name.indexOf('c_m_') + 7).trim();
+		$('div#container div#step').hide(); // Скрывает все div-элементы в контейнере 
+		$('div#type_of_request div').hide(); // Скрывает radio в первом шаге
+		$('div#create_sr').hide(); // скрывате div-элемент под чек-боксом
+		$('div#container div.' + class_name).fadeIn().show();
+	});
+});
+/*Выбор действия в первом шаге (c_m_1)*/
+$(document).ready(function(){
+	$('input.request_menu').change(function(){
+		var class_name = $(this).attr('class');
+		class_name = class_name.substring(class_name.indexOf('r_m_'), class_name.indexOf('r_m_') + 7).trim();
+		$('div#type_of_request div').hide();
+		$('div#create_sr').hide();	
+		$('div#type_of_request div.' + class_name).fadeIn().show();
+	});
+});	
+/* Показать действия при выборе чекбокса */
+
+$(document).ready(function(){
+ $("input#no_answer").change(function(){
+  if ($(this).prop('checked')) {
+        $('#create_sr').fadeIn().show();
+
+  } else {
+      $('#create_sr').fadeOut(300); 
+  }
+  });
+});
+
+/*"Не удалось перевести звонок". Шаг_2 */		
+$(document).ready(function(){
+ $("input#no_answer_step_2").change(function(){
+  if ($(this).prop('checked')) {
+        $('.step_2').fadeIn().show();
+
+  } else {
+      $('.step_2').fadeOut(300); 
+  }
+  });
+});	
+/*"Не удалось перевести звонок". Шаг_3 */		
+$(document).ready(function(){
+ $("input#no_answer_step_3").change(function(){
+  if ($(this).prop('checked')) {
+        $('.step_3').fadeIn().show();
+
+  } else {
+      $('.step_3').fadeOut(300); 
+  }
+  });
+});
+/*"Не удалось перевести звонок". Шаг_4 */		
+$(document).ready(function(){
+ $("input#no_answer_step_4").change(function(){
+  if ($(this).prop('checked')) {
+        $('.step_4').fadeIn().show();
+
+  } else {
+      $('.step_4').fadeOut(300); 
+  }
+  });
+});	
+/*"Не удалось перевести звонок". Шаг_5 */		
+$(document).ready(function(){
+ $("input#no_answer_step_5").change(function(){
+  if ($(this).prop('checked')) {
+        $('.step_5').fadeIn().show();
+
+  } else {
+      $('.step_5').fadeOut(300); 
+  }
+  });
+});			
+
+/*"Не удалось перевести звонок". Шаг_6 */		
+$(document).ready(function(){
+ $("input#no_answer_step_6").change(function(){
+  if ($(this).prop('checked')) {
+        $('.step_6').fadeIn().show();
+
+  } else {
+      $('.step_6').fadeOut(300); 
+  }
+  });
+});			
+/*"Не удалось перевести звонок". Шаг_7 */		
+$(document).ready(function(){
+ $("input#no_answer_step_7").change(function(){
+  if ($(this).prop('checked')) {
+        $('.step_7').fadeIn().show();
+
+  } else {
+      $('.step_7').fadeOut(300); 
+  }
+  });
+});	
+/*"Не удалось перевести звонок". Шаг_8 */		
+$(document).ready(function(){
+ $("input#no_answer_step_8").change(function(){
+  if ($(this).prop('checked')) {
+        $('.step_8').fadeIn().show();
+
+  } else {
+      $('.step_8').fadeOut(300); 
+  }
+  });
+});
+/*"Не удалось перевести звонок". Шаг_9 */		
+$(document).ready(function(){
+ $("input#no_answer_step_9").change(function(){
+  if ($(this).prop('checked')) {
+        $('.step_9').fadeIn().show();
+
+  } else {
+      $('.step_9').fadeOut(300); 
+  }
+  });
+});
+/*"Не удалось перевести звонок". Шаг_10 */		
+$(document).ready(function(){
+ $("input#no_answer_step_10").change(function(){
+  if ($(this).prop('checked')) {
+        $('.step_10').fadeIn().show();
+
+  } else {
+      $('.step_10').fadeOut(300); 
+  }
+  });
+});	
+/* Poo Up окно (1) */
+$(document).ready(function(){
+			$('.popup .close_window, .overlay').click(function (){
+				$('.popup, .overlay').css({'opacity':'0', 'visibility':'hidden'});
+			});
+			$('a.open_window').click(function (e){
+				$('.popup, .overlay').css({'opacity':'1', 'visibility':'visible'});
+				e.preventDefault();
+			});
+		});	
+/* Poo Up окно (2) */
+$(document).ready(function(){
+			$('.popup_1 .close_window_1, .overlay_1').click(function (){
+				$('.popup_1, .overlay_1').css({'opacity':'0', 'visibility':'hidden'});
+			});
+			$('a.open_window_1').click(function (e){
+				$('.popup_1, .overlay_1').css({'opacity':'1', 'visibility':'visible'});
+				e.preventDefault();
+			});
+		});						
+	</script>
+
+</head>	
+<body>
+<form name="f">
+	<table class="main_table" cellspacing="0">
+    <tr>
+        <td colspan="2" class="thead">ПЕРЕДАЧА ОБРАЩЕНИЙ В СЕРВИСНУЮ ГРУППУ</td>
+    </tr>
+    <tr>
+        <td width="30%" class="thead">Тематика обращения</td>		
+        <td class="thead">Инструкция для сотрудника</td>
+    </tr>
+    <tr>
+        <td width="30%" class="main" valign="top">
+		<!-- Таблица параметров -->
+		
+				<div>
+ 				<input type="radio" name="param"  class="content_menu c_m_1"/>Покупка тура	
+ 				</div>
+			
+				<div>
+ 				<input type="radio" name="param" class="content_menu c_m_2"/>Внесение/замена паспортных данных (тур подтвержден)
+ 				</div>
+						
+				<div>
+ 				<input type="radio" name="param" class="content_menu c_m_3" />Изменение состава участников тура (тур подтвержден)	
+ 				</div>
+						
+				<div>
+ 				<input type="radio" name="param" class="content_menu c_m_4"/>Возврат ДС	
+ 				</div>
+						
+				<div>
+ 				<input type="radio" name="param" class="content_menu c_m_5"/>Претензия	
+ 				</div>
+						
+				<div>
+ 				<input type="radio" name="param" class="content_menu c_m_6"/>PayLate (статус/консультации по конктретной заявке)	
+ 				</div>
+						
+				<div>
+ 				<input type="radio" name="param" class="content_menu c_m_7"/>Кредит от Альфа Банка (статус/консультации по конкрентой заявке)	
+ 				</div>
+						
+				<div>
+ 				<input type="radio" name="param"  class="content_menu c_m_8"/>Информирование: рейс/отель/оплата тура/готовность документов (тур подтвержден)	
+ 				</div>
+						
+				<div>
+ 				<input type="radio" name="param" class="content_menu c_m_9"/>Детальная консультация по ЛК клиента	
+ 				</div>
+						
+				<div>
+ 				<input type="radio" name="param" class="content_menu c_m_10" />Аннулирование тура/платежа	
+ 				</div>
+ 				
+		</td>
+		</td>
+        <td class="main" valign="top">
+		<!-- Таблица шагов -->
+<div id="container">			
+			<div id="step" style="display:none" class="c_m_1 c_m_2 c_m_3 c_m_4 c_m_5 c_m_6 c_m_7 c_m_8 c_m_9 c_m_10" >  <!--Общий шаг для всех параметров-->
+Уточнить ФИО звонящего. При необходимости осуществить поиск контакта в системе. <img src="https://onlinetours.bitrix24.ru/company/personal/user/77/files/lib/Процесс/Интерактивные%20процедуры/Основные%20элементы/note.png" width="15px" height="15px" alt="Подсказка" title="Поиск Клиента при входящем звонке осуществляется по ФИО и номеру мобильного телефона.
+Для более детального поиска можно уточнить дополнительные параметры, например e-mail."/><p>	
+<font color="red"><b>ВАЖНО!</b></font> Если поиск Клиента не дал результатов, то для корректной регистрации информации в системе, необходимо создать нового Клиента, указав максимум контактной информации.	
+<details><summary><font color="blue">Примечание</font></summary>Если Клиент зарегестрирован в системе и при этом звонит со своего контактного телефона, то при входящем звонке в правом верхнем углу экрана будет отображаться информация о звонящем.</details>
+<hr />
+			</div>				
+			
+			<div id="step" style="display:none" class="c_m_1">	<!--Покупка тура-->
+<p> Проверить в системе наличие заявки, находящейся в работе: </p>
+			</div>
+			<div  id="step" style="display:none" class="c_m_1"><!--Покупка тура. Дополнительный выбор блоков-->
+<input type="radio" name="param"  class="request_menu r_m_1"/>Заявок в системе нет. Новый клиент. <br>
+<input type="radio" name="param" class="request_menu r_m_2"/>Заявок в системе нет. Действующий клиент, закрепленный за менеджером.<br>
+<input type="radio" name="param"  class="request_menu r_m_3"/>Есть заявка в работе у другого менеджера.<br>
+<hr />
+			</div>
+<div id="type_of_request"> <!--Дополнительные блоки шага №1-->			
+			<div style="display:none" class="r_m_1">
+<ol> Необходимо:
+<li><b>В процессе разговора</b> с Клиентом создать заявку, указав <b>все желаемые параметры</b> для подбора тура.
+<li>Взять в работу или передать заявку в общую очередь.
+</ol>
+			</div>				
+			
+			<div style="display:none" class="r_m_2">	
+<ol> Необходимо:
+<li><b>В процессе разговора</b> с Клиентом создать заявку, указав минимальный набор параметров.
+<li>Сохранить заявку "для себя".
+<li>Перевести звонок менеджеру, работающему с клиентом, предварительно сообщив ФИО клиента и номер заявки.
+<li>Передать</a> заявку ответсвенному менеджеру.	
+</ol>
+<input type="checkbox" id="no_answer" > Не удалось перевести звонок
+			</div>
+			<div style="display:none" class="r_m_3"> <p>	
+Перевести звонок менеджеру, работающему с клиентом, предварительно сообщив ФИО клиента и номер заявки. <br>
+<input type="checkbox" id="no_answer" > Не удалось перевести звонок
+			</div>
+</div>
+<div id="create_sr" style="display:none"> <!-- div под чек-боксом "Не удалось перевести звонок" -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Действие"<br>
+<b><font color="red">Тема:</font></b>"Перевод звонка"<br>
+<b><font color="red">Подтема:</font></b>"Продажи"<p>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			<div id="step" style="display: none" class="c_m_2"><!--Внесение/замена паспортных данных (тур подтвержден)-->
+<font color="blue">Сообщить клиенту,</font>что для получения подробной консультации звонок будет переведен в сервисную группу.<br />
+Осуществить перевод звонка на<font color="red" size="4" ><b> номер 2. </b></font><p />
+<input type="checkbox" id="no_answer_step_2" > Не удалось перевести звонок
+<div style="display:none" class="step_2"> <!-- div под чек-боксом "Не удалось перевести звонок" (шаг_2) -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Действие"<br>
+<b><font color="red">Тема:</font></b>"Изменение данных"<br>
+<b><font color="red">Подтема:</font></b>"<в зависимости от типа данных>"<p>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+В поле <b><font color="red">"Ответственная команда"</font></b> указать группу "Service" (поле "Ответственный" необходимо оставить пустым). <p />
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			</div>
+			<div id="step" style="display: none" class="c_m_3"><!--Изменение состава участников тура (тур подтвержден)-->
+<font color="blue">Сообщить клиенту,</font>что для получения подробной консультации звонок будет переведен в сервисную группу.<br />
+Осуществить перевод звонка на<font color="red" size="4" ><b> номер 2. </b></font><p />
+<input type="checkbox" id="no_answer_step_3" > Не удалось перевести звонок
+<div style="display:none" class="step_3"> <!-- div под чек-боксом "Не удалось перевести звонок" (шаг_3) -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Действие"<br>
+<b><font color="red">Тема:</font></b>"Изменение состава участников тура"<br>
+<b><font color="red">Подтема:</font></b>"<в зависимости от вопроса>"<p>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+В поле <b><font color="red">"Ответственная команда"</font></b> указать группу "Service" (поле "Ответственный" необходимо оставить пустым). <p />
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			</div>
+			<div id="step" style="display: none" class="c_m_4"><!--Возврат ДС-->
+<font color="blue">Сообщить клиенту,</font>что для получения подробной консультации звонок будет переведен в сервисную группу.<br />
+Осуществить перевод звонка на<font color="red" size="4" ><b> номер 2. </b></font><p />
+<input type="checkbox" id="no_answer_step_4" > Не удалось перевести звонок
+<div style="display:none" class="step_4"> <!-- div под чек-боксом "Не удалось перевести звонок" (шаг_4) -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Действие"<br>
+<b><font color="red">Тема:</font></b>"Оплата тура"<br>
+<b><font color="red">Подтема:</font></b>"Возврат ДС"<p>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+В поле <b><font color="red">"Ответственная команда"</font></b> указать группу "Service" (поле "Ответственный" необходимо оставить пустым). <p />
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			</div>
+			<div id="step" style="display: none" class="c_m_5"><!--Претензия (регистрация претензионного обращения)-->
+<font color="blue">Сообщить клиенту,</font>что для получения подробной консультации звонок будет переведен в сервисную группу.<br />
+Осуществить перевод звонка на<font color="red" size="4" ><b> номер 2. </b></font><p />
+<input type="checkbox" id="no_answer_step_5" > Не удалось перевести звонок
+<div style="display:none" class="step_5"> <!-- div под чек-боксом "Не удалось перевести звонок" (шаг_5) -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Претензия"<br>
+<b><font color="red">Тема:</font></b>"<в зависимости от сути претензии>"<br>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+В поле <b><font color="red">"Ответственная команда"</font></b> указать группу "Service" (поле "Ответственный" необходимо оставить пустым). <p />
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			</div>
+			<div id="step" style="display: none" class="c_m_6"><!--PayLate (статус/консультация по конкретной заявке)-->
+<font color="blue">Сообщить клиенту,</font>что для получения подробной консультации звонок будет переведен в сервисную группу.<br />
+Осуществить перевод звонка на<font color="red" size="4" ><b> номер 2. </b></font><p />
+<input type="checkbox" id="no_answer_step_6" > Не удалось перевести звонок
+<div style="display:none" class="step_6"> <!-- div под чек-боксом "Не удалось перевести звонок" (шаг_6) -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Информирование"<br>
+<b><font color="red">Тема:</font></b>"Оплата"<br>
+<b><font color="red">Подтема:</font></b>"PayLate"<p>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+В поле <b><font color="red">"Ответственная команда"</font></b> указать группу "Service" (поле "Ответственный" необходимо оставить пустым). <p />
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			</div>
+			<div id="step" style="display: none" class="c_m_7"><!--Кредит от Альфа Банка (статус/консультация по конкретной заявке)-->
+<font color="blue">Сообщить клиенту,</font>что для получения подробной консультации звонок будет переведен в сервисную группу.<br />
+Осуществить перевод звонка на<font color="red" size="4" ><b> номер 2. </b></font><p />
+<input type="checkbox" id="no_answer_step_7" > Не удалось перевести звонок
+<div style="display:none" class="step_7"> <!-- div под чек-боксом "Не удалось перевести звонок" (шаг_7) -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Информирвоание"<br>
+<b><font color="red">Тема:</font></b>"Оформление кредита"<br>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+В поле <b><font color="red">"Ответственная команда"</font></b> указать группу "Service" (поле "Ответственный" необходимо оставить пустым). <p />
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			</div>
+			<div id="step" style="display: none" class="c_m_8"><!--Информирование: рейс/отель/оплата тура/готовность документов (тур подтвержден)-->
+<font color="blue">Сообщить клиенту,</font>что для получения подробной консультации звонок будет переведен в сервисную группу.<br />
+Осуществить перевод звонка на<font color="red" size="4" ><b> номер 2. </b></font><p />
+<input type="checkbox" id="no_answer_step_8" > Не удалось перевести звонок
+<div style="display:none" class="step_8"> <!-- div под чек-боксом "Не удалось перевести звонок" (шаг_8) -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Информирвоание"<br>
+<b><font color="red">Тема:</font></b>"<в зависимости от вопроса клиента>"<br>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+В поле <b><font color="red">"Ответственная команда"</font></b> указать группу "Service" (поле "Ответственный" необходимо оставить пустым). <p />
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			</div>
+			<div id="step" style="display: none" class="c_m_9"><!--Детальная консультация по ЛК клиента-->
+<font color="blue">Сообщить клиенту,</font>что для получения подробной консультации звонок будет переведен в сервисную группу.<br />
+Осуществить перевод звонка на<font color="red" size="4" ><b> номер 2. </b></font><p />
+<input type="checkbox" id="no_answer_step_9" > Не удалось перевести звонок
+<div style="display:none" class="step_9"> <!-- div под чек-боксом "Не удалось перевести звонок" (шаг_9) -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Консультация"<br>
+<b><font color="red">Тема:</font></b>"Личный кабинет"<br>
+<b><font color="red">Подтема:</font></b>"<в зависимости от вопроса клиента>"<p>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+В поле <b><font color="red">"Ответственная команда"</font></b> указать группу "Service" (поле "Ответственный" необходимо оставить пустым). <p />
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			</div>
+			<div id="step" style="display: none" class="c_m_10"><!--Аннулирование тура/платежа-->
+<font color="blue">Сообщить клиенту,</font>что для получения подробной консультации звонок будет переведен в сервисную группу.<br />
+Осуществить перевод звонка на<font color="red" size="4" ><b> номер 2. </b></font><p />
+<input type="checkbox" id="no_answer_step_10" > Не удалось перевести звонок
+<div style="display:none" class="step_10"> <!-- div под чек-боксом "Не удалось перевести звонок" (шаг_10) -->
+Зарегистрировать обращение: <br>
+<b><font color="red">Тип:</font></b>"Действие"<br>
+<b><font color="red">Тема:</font></b>"Аннулирование"<br>
+<b><font color="red">Подтема:</font></b>"Тур/Платёж"<p>
+В поле <b><font color="red">"Описание"</font></b> указать причину перевода (суть обращения клиента).<p>
+В поле <b><font color="red">"Ответственная команда"</font></b> указать группу "Service" (поле "Ответственный" необходимо оставить пустым). <p />
+Указать <font color="red"><b>статус</font></b> обращения "Назначено". Сохранить обращение.	
+</div>
+			</div>
+</div>			
+		</td>
+    </tr>
+<!-- Блок с ссылками -->    
+    <tr>
+        <td colspan="2" class="thead">
+		 <a class="open_window" href="#">Передача заявки другому  менеджеру</a>		 
+		 <a class="open_window_1" href="#">Передача обращения (пример заполнения)</a> 
+		</td>
+    </tr>
+</table>
+</form>
+<!--Скрытые элементы (окна) -->
+
+<div class="overlay"></div> <!--Передача заявки другому менеджеру-->
+<div class="popup">
+<p><ol>Для передачи заявки другому пользователю, необходимо:</p>
+<li> Перейти в режим редактирования заявки, нажав кнопку <b>"Правка".</b>
+<li> Перейти на закладку<b>"Ответственные".</b> 	
+<li> В полях<b>"Ответственный(-ая)" и "Ответственный менеджер отдела продаж"</b> указать, кому передавать заявку
+<li> Сохранить изменения. <br>
+<img src="change_manager.png" />		
+</ol>
+</div>
+<div class="overlay_1"></div><!--Передача обращения (пример заполнения)-->
+<div class="popup_1">
+<img src="change_sr.png" />		
+</ol>
+</div>
+</body>
+</html>
